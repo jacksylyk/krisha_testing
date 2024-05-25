@@ -3,7 +3,7 @@ number_login = ""
 password_login = "Qwe*12345"
 button_xpath = "/html/body/div[1]/div/div[2]/form/div[5]/div/button"
 
-url_send = ""
+url_send = "https://krisha.kz/a/show/694146504"
 number_send = ""
 password_send = ""
 
