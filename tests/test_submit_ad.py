@@ -12,9 +12,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import config
 from pages.login_page import LoginPage
-from pages.publication_page import PublicationPage
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+
+from pages.pubication_page import PublicationPage
 
 
 @pytest.fixture
