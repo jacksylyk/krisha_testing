@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  NUMBER_LOGIN: ${{ secrets.NUMBER_LOGIN }}
+  PASSWORD_LOGIN: ${{ secrets.PASSWORD_LOGIN }}
+  NUMBER_SEND: ${{ secrets.NUMBER_SEND }}
+  PASSWORD_SEND: ${{ secrets.PASSWORD_SEND }}
+
 jobs:
   build:
 
