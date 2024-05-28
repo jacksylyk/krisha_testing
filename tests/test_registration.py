@@ -1,11 +1,13 @@
-import time
 import unittest
-
+import allure
 from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
 
-import allure
+import config
 from pages.base_page import BasePage
 from pages.login_page import LoginPage
 
@@ -31,20 +33,16 @@ class TestRegistration(unittest.TestCase):
 
         self.assertIn("Войти на Krisha.kz", driver.title)
 
-        with allure.step("Ввести № телефона в поле «Введите номер телефона» "):
-            login_page.enter_login("87016782222")
-        self.assertEqual(login_page.get_login_value(), "87016782222")
+        login_page.enter_login(config.number_login)
+        self.assertEqual(login_page.get_login_value(), config.number_login)
 
-        with allure.step("Нажать на кнопку Продолжить "):
-            login_page.click_button(By.XPATH, "/html/body/div[1]/div/div[2]/form/div[5]/div/button")
+        login_page.click_button(By.XPATH, "/html/body/div[1]/div/div[2]/form/div[5]/div/button")
         time.sleep(1)
 
-        with allure.step("Ввести пароль "):
-            login_page.enter_password("Qwe*12345")
-        self.assertEqual(login_page.get_password_value(), "Qwe*12345")
+        login_page.enter_password(config.password_login)
+        self.assertEqual(login_page.get_password_value(), config.password_login)
 
-        with allure.step("Нажать на кнопку Вход "):
-            login_page.click_button(By.XPATH, "/html/body/div[1]/div/div[2]/form/div[5]/div/button")
+        login_page.click_button(By.XPATH, "/html/body/div[1]/div/div[2]/form/div[5]/div/button")
 
         allure.attach(self.driver.get_screenshot_as_png(), name="Registration Page", attachment_type=AttachmentType.PNG)
 

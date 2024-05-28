@@ -26,17 +26,9 @@ class TestChangeLanguage(unittest.TestCase):
         base_page = BasePage(driver)
         language_page = LanguagePage(driver)
 
-        with allure.step("Navigate to the website"):
-            base_page.navigate_to_url("https://krisha.kz")
-        with allure.step("Hover over the language switcher"):
-            language_page.hover_lang_switcher()
-
-        WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.CLASS_NAME, "lang-switcher__options"))
-        )
-
-        with allure.step("Click the language option"):
-            language_page.click_language_option()
+        base_page.navigate_to_url("https://krisha.kz")
+        language_page.hover_lang_switcher()
+        language_page.click_language_option()
 
         self.assertIn(
             "Крыша. Қазақстандағы жылжымайтын мүлік — Қазақстандағы жылжымайтын мүлік сату туралы хабарландырулар",

@@ -2,16 +2,19 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import allure
 
 
 class LanguagePage:
     def __init__(self, driver):
         self.driver = driver
 
+    @allure.step("Навестись на переключатель языка")
     def hover_lang_switcher(self):
         lang_switcher = self.driver.find_element(By.CLASS_NAME, "lang-switcher")
         ActionChains(self.driver).move_to_element(lang_switcher).perform()
 
+    @allure.step("Нажатие на опцию языка")
     def click_language_option(self):
         WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.CLASS_NAME, "lang-switcher__options"))
