@@ -30,4 +30,4 @@ jobs:
         sudo chmod +x /usr/bin/chromedriver
     - name: Run tests
       run: |
-        xvfb-run -a pytest -v -s --alluredir results
+        pytest -v -s --alluredir results
