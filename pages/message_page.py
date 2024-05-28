@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import config
+
 
 class MessagePage:
     def __init__(self, driver):
@@ -10,11 +12,11 @@ class MessagePage:
 
     @allure.step("Открыть объявление")
     def open(self):
-        self.driver.get("https://krisha.kz/a/show/694140508")
+        self.driver.get(config.url_send)
 
     @allure.step("Закрыть окно подсказки")
     def click_close_tutorial_button(self):
-        close_tutorial_button = WebDriverWait(self.driver, 10).until(
+        close_tutorial_button = WebDriverWait(self.driver, 15).until(
             EC.visibility_of_element_located((By.CLASS_NAME, "notes-tutorial__close"))
         )
         close_tutorial_button.click()
@@ -25,11 +27,11 @@ class MessagePage:
         send_message_button.click()
 
     @allure.step("Ввести сообщение")
-    def enter_message(self, message):
+    def enter_message(self):
         message_field = self.driver.find_element(By.XPATH,
                                                  "/html/body/div[2]/main/div[2]/div/div[1]/div/div[3]/form/span")
         message_field.click()
-        message_field.send_keys(message)
+        message_field.send_keys("Покупаю!")
 
     @allure.step("Нажать Отправить")
     def click_send_button(self):

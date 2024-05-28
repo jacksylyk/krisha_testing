@@ -10,8 +10,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import config
-from pages.publication_page import PublicationPage
 from pages.login_page import LoginPage
+from pages.pubication_page import PublicationPage
 
 
 class TestSubmitAd(unittest.TestCase):

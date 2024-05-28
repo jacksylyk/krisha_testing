@@ -1,3 +1,4 @@
+import time
 import unittest
 import allure
 from allure_commons.types import AttachmentType
@@ -28,6 +29,7 @@ class TestChangeLanguage(unittest.TestCase):
 
         base_page.navigate_to_url("https://krisha.kz")
         language_page.hover_lang_switcher()
+        time.sleep(2)
         language_page.click_language_option()
 
         self.assertIn(
