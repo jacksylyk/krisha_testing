@@ -1,11 +1,11 @@
 url = "https://krisha.kz"
-number_login = ""
+number_login = "87016782222"
 password_login = "Qwe*12345"
 button_xpath = "/html/body/div[1]/div/div[2]/form/div[5]/div/button"
 
 url_send = "https://krisha.kz/a/show/694146504"
-number_send = ""
-password_send = ""
+number_send = "87718510428"
+password_send = "Doszhanov2003?"
 
 rooms = "2"
 city_num = "105"
