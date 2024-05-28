@@ -1,3 +1,4 @@
+import time
 import unittest
 import allure
 import pytest
@@ -40,7 +41,8 @@ class TestFilterProducts:
 
         with allure.step("Выбрать категорию, количество комнат, город и регион"):
             filter_page.select_category("sell")
-            filter_page.select_rooms(config.rooms)
+            time.sleep(2)
+            filter_page.select_rooms("2")
             filter_page.select_city(config.city_num)
             filter_page.select_region(config.region_num)
 
