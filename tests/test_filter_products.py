@@ -44,7 +44,8 @@ class TestFilterProducts:
             time.sleep(2)
             filter_page.select_rooms("2")
             filter_page.select_city(config.city_num)
-            filter_page.select_region(config.region_num)
+            time.sleep(3)
+            filter_page.select_region("106")
 
         with allure.step("Нажать на кнопку выбора и кнопку поиска"):
             filter_page.click_select_button()
