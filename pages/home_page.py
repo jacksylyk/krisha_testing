@@ -1,8 +1,3 @@
-import time
-
-from selenium.webdriver.common.by import By
-
-import config
 from .base_page import BasePage
 
 
