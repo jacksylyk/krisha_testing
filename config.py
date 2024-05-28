@@ -1,7 +1,4 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 url = "https://krisha.kz"
 number_login = os.getenv("NUMBER_LOGIN")
