@@ -1,10 +1,12 @@
+import os
 import time
 import unittest
 
 import allure
 import pytest
-from allure_commons.types import AttachmentType
 from selenium import webdriver
+
+from allure_commons.types import AttachmentType
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,7 +19,9 @@ from pages.profile_page import ProfilePage
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
+from dotenv import load_dotenv
 
+load_dotenv()
 @pytest.fixture
 def driver():
     options = webdriver.ChromeOptions()
